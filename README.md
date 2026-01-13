@@ -36,13 +36,13 @@ Set the following environment variables:
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `GEMINI_API_KEY` | Yes | - | Your Google Gemini API key |
-| `GEMINI_MODEL` | No | `gemini-2.5-flash-image` | Gemini model to use |
+| `GEMINI_MODEL` | No | `gemini-3-pro-image-preview` | Gemini model to use |
 | `GEMINI_OUTPUT_DIR` | No | `./generated_images` | Output directory for images |
 
 ### Supported Models
 
-- `gemini-2.5-flash-image` (default, stable)
-- `gemini-3-pro-image-preview` (latest, preview)
+- `gemini-3-pro-image-preview` (default, latest)
+- `gemini-2.5-flash-image` (stable, faster)
 
 ### Supported Aspect Ratios
 
@@ -62,14 +62,14 @@ Add to your Claude Desktop configuration (`~/Library/Application Support/Claude/
       "args": ["/path/to/mrn-gemini-imagen-mcp/dist/index.js"],
       "env": {
         "GEMINI_API_KEY": "your-api-key-here",
-        "GEMINI_MODEL": "gemini-2.5-flash-image"
+        "GEMINI_MODEL": "gemini-3-pro-image-preview"
       }
     }
   }
 }
 ```
 
-> **Tip:** Change `GEMINI_MODEL` to `gemini-3-pro-image-preview` for the latest model.
+> **Tip:** Change `GEMINI_MODEL` to `gemini-2.5-flash-image` for faster generation.
 
 ## Tools
 

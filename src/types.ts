@@ -148,6 +148,6 @@ export const VALID_ASPECT_RATIOS: AspectRatio[] = [
 ];
 
 export const DEFAULT_CONFIG: Omit<GeminiConfig, 'apiKey'> = {
-  model: "gemini-2.5-flash-image",
+  model: "gemini-3-pro-image-preview",
   outputDirectory: "./generated_images"
 };
