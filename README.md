@@ -1,6 +1,26 @@
 # mrn-gemini-imagen-mcp
 
+[![npm version](https://badge.fury.io/js/mrn-gemini-imagen-mcp.svg)](https://www.npmjs.com/package/mrn-gemini-imagen-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 MCP (Model Context Protocol) server for generating and editing images using Google Gemini API.
+
+## Quick Start
+
+1. Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+2. Add to Claude Desktop config:
+```json
+{
+  "mcpServers": {
+    "gemini-imagen": {
+      "command": "npx",
+      "args": ["-y", "mrn-gemini-imagen-mcp"],
+      "env": { "GEMINI_API_KEY": "your-api-key-here" }
+    }
+  }
+}
+```
+3. Restart Claude Desktop and start generating images!
 
 ## Features
 
@@ -17,15 +37,22 @@ MCP (Model Context Protocol) server for generating and editing images using Goog
 
 ## Installation
 
+### Option 1: Using npx (Recommended)
+
+No installation needed! Just configure Claude Desktop or Claude Code to use it directly via npx.
+
+### Option 2: Global Install
+
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/mrn-gemini-imagen-mcp.git
+npm install -g mrn-gemini-imagen-mcp
+```
+
+### Option 3: From Source
+
+```bash
+git clone https://github.com/mernorthzide/mrn-gemini-imagen-mcp.git
 cd mrn-gemini-imagen-mcp
-
-# Install dependencies
 npm install
-
-# Build the project
 npm run build
 ```
 
@@ -54,22 +81,57 @@ Set the following environment variables:
 
 Add to your Claude Desktop configuration (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
 
+### Using npx (Recommended)
+
 ```json
 {
   "mcpServers": {
     "gemini-imagen": {
-      "command": "node",
-      "args": ["/path/to/mrn-gemini-imagen-mcp/dist/index.js"],
+      "command": "npx",
+      "args": ["-y", "mrn-gemini-imagen-mcp"],
       "env": {
-        "GEMINI_API_KEY": "your-api-key-here",
-        "GEMINI_MODEL": "gemini-3-pro-image-preview"
+        "GEMINI_API_KEY": "your-api-key-here"
       }
     }
   }
 }
 ```
 
-> **Tip:** Change `GEMINI_MODEL` to `gemini-2.5-flash-image` for faster generation.
+### Using Global Install
+
+```json
+{
+  "mcpServers": {
+    "gemini-imagen": {
+      "command": "mrn-gemini-imagen-mcp",
+      "env": {
+        "GEMINI_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+## Usage with Claude Code
+
+Add to your Claude Code settings file (`~/.claude.json`):
+
+```json
+{
+  "mcpServers": {
+    "gemini-imagen": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "mrn-gemini-imagen-mcp"],
+      "env": {
+        "GEMINI_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+> **Tip:** Set `GEMINI_MODEL` to `gemini-2.5-flash-image` for faster generation.
 
 ## Tools
 

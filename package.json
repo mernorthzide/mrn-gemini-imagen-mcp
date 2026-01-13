@@ -4,6 +4,14 @@
   "description": "MCP server for generating and editing images using Google Gemini API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "mrn-gemini-imagen-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
@@ -12,13 +20,25 @@
   },
   "keywords": [
     "mcp",
+    "model-context-protocol",
     "gemini",
+    "imagen",
     "image-generation",
     "ai",
-    "google"
+    "google",
+    "claude",
+    "anthropic"
   ],
-  "author": "",
+  "author": "Jumpon Dumkham",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mernorthzide/mrn-gemini-imagen-mcp.git"
+  },
+  "homepage": "https://github.com/mernorthzide/mrn-gemini-imagen-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/mernorthzide/mrn-gemini-imagen-mcp/issues"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0"
   },
